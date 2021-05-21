@@ -118,6 +118,14 @@ export default {
     font-weight: bold;
     color: $accent-green; 
   }
+}
 
+@media screen and (max-width: $tablet) {
+  .footer {
+    .content {
+      padding: 3rem 0.5rem 0;
+      font-size: 14px;
+    }
+  }
 }
 </style>

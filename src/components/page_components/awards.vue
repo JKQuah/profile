@@ -1,5 +1,7 @@
 <template>
-  this is awards
+  <div class="text-center">
+    --- Coming Soon ---
+  </div>
 </template>
 
 <script>

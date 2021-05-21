@@ -19,7 +19,7 @@
 export default {
   data() {
     return {
-      facebook: "https://m.facebook.com/jiakai.quah",
+      facebook: "", //https://m.facebook.com/jiakai.quah
       instagram: "https://www.instagram.com/quah_jia_kai/",
       linkedin: "https://www.linkedin.com/in/jia-kai-quah-434180173",
       github: "https://github.com/JKQuah/"
@@ -31,9 +31,6 @@ export default {
     },
     navigateToInstagram: function () {
       window.open(this.instagram, '_blank')
-    },
-    navigateToGmail: function() {
-      window.location.href = 'mailto:' + this.gmail + '?subject="Job Enquiry"'
     },
     navigateToLinkedIn: function() {
       window.open(this.linkedin, '_blank')

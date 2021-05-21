@@ -1,6 +1,6 @@
 <template>
   <p class="title">Skills</p>
-  <div class="row">
+  <div class="row skill-row">
     <div class="col-6 col-md-3 mb-5" v-for="skill in skills" :key="skill.id">
       <div class="icon-holder">
         <img
@@ -28,7 +28,7 @@
         <small class="skill-updated">Last project at {{ skill.updated_at }}</small>
       </div>
     </div>
-    <small class="text-end px-4">*All rating are based on my knowledge scope and rated accordingly.</small>
+    <small class="remarks">*All rating are based on my knowledge scope and rated accordingly.</small>
     <small><i class="fas fa-thumbs-up pe-1"></i> indicates good proficiency | Keen to learn</small>
     <small><i class="fas fa-star pe-1"></i> indicates learning in process | Keen to learn </small>
   </div>
@@ -180,6 +180,10 @@ export default {
   animation: barstripes 2s linear infinite;
 }
 
+small.remarks {
+  text-align: end;
+}
+
 @keyframes barstripes {
   0% { background-position-x: 32px;}
 }
@@ -211,6 +215,14 @@ export default {
   .skill-updated {
     font-size: 0.675rem;
     padding: 0 0.275rem;
+  }
+
+  .skill-row {
+    padding: 0 0.5rem;
+  }
+
+  small.remarks {
+    text-align: left;
   }
 }
 </style>

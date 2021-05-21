@@ -10,18 +10,18 @@
         </div>
       </transition>
     </div>
-
     <div class="row my-5">
-      <div class="col-6 col-sm-3 contact-wrapper whatsapp">
+      <p class="text-center">* Currently only Gmail is available.</p>
+      <div class="col-6 col-sm-3 contact-wrapper whatsapp" @click="navigateToWhatsapp">
         <h5 class="title">WhatsApp</h5>
       </div>
-      <div class="col-6 col-sm-3 contact-wrapper gmail">
+      <div class="col-6 col-sm-3 contact-wrapper gmail" @click="navigateToGmail">
         <h5 class="title">Gmail</h5>
       </div>
-      <div class="col-6 col-sm-3 contact-wrapper messenger">
+      <div class="col-6 col-sm-3 contact-wrapper messenger" @click="navigateToMessenger">
         <h5 class="title">Messager</h5>
       </div>
-      <div class="col-6 col-sm-3 contact-wrapper telegram">
+      <div class="col-6 col-sm-3 contact-wrapper telegram" @click="navigateToTelegram">
         <h5 class="title">Telegram</h5>
       </div>
     </div>
@@ -30,7 +30,16 @@
 
 <script>
 export default {
-
+  data() {
+    return {
+      gmail: "kobekai1997@gmail.com",
+    }
+  },
+  methods: {
+    navigateToGmail: function() {
+      window.location.href = 'mailto:' + this.gmail + '?subject=Job Enquiry&body=[Please attach together with the job description]'
+    },
+  }
 }
 </script>
 

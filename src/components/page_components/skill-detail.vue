@@ -1,5 +1,7 @@
 <template>
-  this is skill detail
+  <div class="text-center">
+    --- Stay Tuned ---
+  </div>
 </template>
 
 <script>
