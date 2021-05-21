@@ -6,9 +6,9 @@
     <li class="nav-item">
       <router-link class="nav-link" :to="{ name: 'About' }">About</router-link>
     </li>
-    <li class="nav-item">
+    <!-- <li class="nav-item">
       <router-link class="nav-link" :to="{ name: 'Gallery' }">Gallery</router-link>
-    </li>
+    </li> -->
     <li class="nav-item">
       <router-link class="nav-link" :to="{ name: 'Contact' }">Contact</router-link>
     </li>

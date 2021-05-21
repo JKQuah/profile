@@ -1,12 +1,18 @@
 <template>
-  <button class="btn btn-outline-success">{{ text }}</button>
+  <button class="btn btn-outline-success" @click="navigate(links)">{{ text }}</button>
 </template>
 
 <script>
 export default {
   props: {
     text: String,
+    links: String
   },
+  methods: {
+    navigate: function(links) {
+      this.$router.push(links)
+    }
+  }
 };
 </script>
 

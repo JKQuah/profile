@@ -3,7 +3,8 @@ import Home from '../views/Home.vue'
 import About from '../views/About.vue'
 import Gallery from '../views/Gallery.vue'
 import Contact from '../views/Contact.vue'
-import Example from '../views/Component.vue';
+// import Example from '../views/Component.vue';
+import PageNotFound from '../views/404.vue'
 
 const routes = [
   {
@@ -26,11 +27,20 @@ const routes = [
     name: 'Contact',
     component: Contact
   },
-  {
-    path: '/ui_component',
-    name: 'Example',
-    component: Example
-  }
+  // {
+  //   path: '/ui_component',
+  //   name: 'Example',
+  //   component: Example
+  // },
+  { 
+    path: '/page-not-found', 
+    name: 'PageNotFound',
+    component: PageNotFound 
+  },
+  { 
+    path: "/:catchAll(.*)",
+    redirect: '/page-not-found' 
+  },
 ]
 
 const router = createRouter({

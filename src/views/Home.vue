@@ -28,7 +28,7 @@
       <div class="col-0 col-md-4"></div>
       <div class="col-12 col-md-4 text-center">
         <transition name="button" appear>
-          <DiscoverMoreBtn text="Discover More"/>
+          <DiscoverMoreBtn text="Discover More" links="/about"/>
         </transition>
       </div>
       <div class="col-12 col-md-4 social-media-wrapper">
