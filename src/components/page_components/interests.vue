@@ -1,7 +1,11 @@
 <template>
   <div class="interest-wrapper mb-5">
     <div class="interest-items" v-for="hobby in hobbies" :key="hobby.id">
-      <img :src="hobby.image" :alt="hobby.alternate" :title="hobby.alternate" />
+      <img
+        :src="currentUrl + hobby.image"
+        :alt="hobby.alternate"
+        :title="hobby.alternate"
+      />
       <span class="subtitle">{{ hobby.name }}</span>
     </div>
   </div>
@@ -9,8 +13,12 @@
 
 <script>
 export default {
+  created() {
+    this.currentUrl = window.location.href;
+  },
   data() {
     return {
+      currentUrl: "",
       hobbies: [
         {
           id: 1,
