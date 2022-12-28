@@ -1,66 +1,26 @@
 <template>
   <div class="footer">
-    <div class="content">
-      <div class="row">
-        <!-- Social Media -->
-        <div class="col-6 col-md-3">
-          <h5 class="title">Follow Me</h5>
-          <div class="social-media-wrapper">
-            <SocialMedia />
-          </div>
-        </div>
 
-        <!-- About -->
-        <div class="col-6 col-md-3">
-          <h5 class="title">About</h5>
-          <ul class="footer-list-group">
-            <li class="footer-list-item">
-              <a href="/about#profile">Profile</a>
-            </li>
-            <li class="footer-list-item">
-              <a href="/about#programming">Programming Skills</a>
-            </li>
-            <li class="footer-list-item">
-              <a href="/about#interest">Interest & Hobby</a>
-            </li>
-            <li class="footer-list-item">
-              <a href="/about#language">Language</a>
-            </li>
-            <li class="footer-list-item">
-              <a href="/about#awards">Awards & Certificates</a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Project -->
-        <div class="col-6 col-md-3">
-          <h5 class="title">Project</h5>
-          <ul class="footer-list-group">
-            <li class="footer-list-item">
-              <a href="/project#">Analytics Dashboard</a>
-            </li>
-            <li class="footer-list-item">
-              <a href="/project#">Foody Mobile App</a>
-            </li>
-            <li class="footer-list-item">
-              <a href="/project#">Beauty Forum</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
+    <NavigationBar />
+    
     <div class="footer-banner">
-      <small>This profile is powered by <span class="highlight">Vue 3</span> and designed by <span class="highlight">JK Quah</span> <i class="fas fa-heart"></i> | 2021</small>
+      <small>
+        This profile is coded using
+        <span class="highlight">Vue</span>
+        and designed by
+        <span class="highlight">Olzzonne Quah </span>
+        <i class="fas fa-heart"></i>
+        | 2023
+      </small>
     </div>
   </div>
 </template>
 
 <script>
-import SocialMedia from "@/components/page_components/social-media.vue";
+import NavigationBar from "./page_components/navigation-bar.vue";
 export default {
   components: {
-    SocialMedia,
+    NavigationBar,
   },
 };
 </script>
@@ -69,41 +29,11 @@ export default {
 .footer {
   background: $bg-grey;
   margin-top: 3rem;
-  padding: 3rem 0 0 0;
 
-  .content {
-    margin: auto;
-    max-width: $page-max-width;
-
-    .title {
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-  }
-
-  .social-media-wrapper {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-}
-
-.footer-list-group {
-  padding-left: 0;
-
-  .footer-list-item {
-    list-style: none;
-    padding: 0.5rem 0;
-  }
-
-  a {
-    color: $dark-blue;
-    text-decoration: none;
-
-    &:hover {
-      color: $dark-green;
-    }
+  .title {
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-left: 1rem;
   }
 }
 
@@ -116,7 +46,7 @@ export default {
 
   .highlight {
     font-weight: bold;
-    color: $accent-green; 
+    color: $accent-green;
   }
 }
 

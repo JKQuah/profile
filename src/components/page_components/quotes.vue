@@ -1,5 +1,9 @@
 <template>
-  <p class="title">Quotes</p>
+  <Titles
+    title="Quotes"
+    subtitle="Always remember them for inspiration and motivation"
+  />
+
   <div class="row">
     <div class="col-12 col-md-6" v-for="quote in quotes" :key="quote.id">
       <div class="card-quote">
@@ -24,27 +28,24 @@
 </template>
 
 <script>
+import Titles from './titles.vue';
+
 export default {
-  data() {
-    return {
-      quotes: [
-        { id: 1, sentence: "The more you know, the more you realize you don't know.", author: "Aristotle", source: "Dunning-Kruger Effect" },
-        { id: 2, sentence: "I have no special talent. I am only passionately curious.", author: "Albert Einstein ", source: "" },
-        { id: 3, sentence: "Once in your life, try something. Work hard at something. Try to change. Nothing bad can happen.", author: "Jack Ma", source: "" },
-        { id: 4, sentence: "People don't care about what you say, they care about what you build.", author: "Mark Zuckerberg", source: "" },
-      ],
-    };
-  },
+    data() {
+        return {
+            quotes: [
+                { id: 1, sentence: "The more you know, the more you realize you don't know.", author: "Aristotle", source: "Dunning-Kruger Effect" },
+                { id: 2, sentence: "I have no special talent. I am only passionately curious.", author: "Albert Einstein ", source: "" },
+                { id: 3, sentence: "Once in your life, try something. Work hard at something. Try to change. Nothing bad can happen.", author: "Jack Ma", source: "" },
+                { id: 4, sentence: "People don't care about what you say, they care about what you build.", author: "Mark Zuckerberg", source: "" },
+            ],
+        };
+    },
+    components: { Titles }
 };
 </script>
 
 <style lang="scss" scoped>
-.title {
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 1.5rem
-}
 .card-quote {
   margin: 1.5rem 2rem;
   display: flex;
@@ -52,6 +53,10 @@ export default {
 
   blockquote {
     text-align: center;
+
+    p {
+      font-size: 18px;
+    }
   }
 
   .quote-icon-left, .quote-icon-right {

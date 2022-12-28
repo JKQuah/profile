@@ -1,7 +1,7 @@
 <template>
   <div id="about">
-    <div class="title" id="profile">Profile</div>
-    <div class="row about-banner">
+    <!-- <div class="title" id="profile">Profile</div> -->
+    <!-- <div class="row about-banner">
       <transition name="float-down" appear>
         <div class="col-12 col-md-7 security-image-holder">
           <img src="@/assets/security.svg" alt="">
@@ -15,30 +15,47 @@
           <SocialMedia />
         </div>
       </div>
+    </div> -->
+
+    <div id="programming">
+      <Titles
+        title="Programming Skills"
+        subtitle="Fullstack programming languages and frameworks I expertized"
+      />
+      <SkillDetailWrapper />
     </div>
 
-    <div class="title" id="programming">Programming Skills</div>
-    <SkillDetailWrapper />
+    <div id="interest">
+      <Titles
+        title="Interest & Hobby"
+        subtitle="Sit back and relax during off working hours"
+      />
+      <InterestWrapper />
+    </div>
 
-    <div class="title" id="interest">Interest & Hobby</div>
-    <InterestWrapper />
+    <div id="language">
+      <Titles
+        title="Languages"
+        subtitle="Break the barrier between you and me"
+      />
+      <LanguageWrapper />
+    </div>
 
-    <div class="title" id="language">Language</div>
-    <LanguageWrapper />
-
-    <div class="title" id="awards">Awards & Certificates</div>
-    <AwardWrapper />
-
+    <Titles
+      title="Follow Me"
+      subtitle="Reach out anytime. I am just an inbox message away!"
+    />
+    <SocialMedia />
   </div>
 </template>
 
 <script>
-import SocialMedia from '@/components/page_components/social-media.vue'
-import InterestWrapper from '@/components/page_components/interests.vue'
-import SkillDetailWrapper from '@/components/page_components/skill-detail.vue'
-import LanguageWrapper from '@/components/page_components/languages.vue'
-import AwardWrapper from '@/components/page_components/awards.vue'
-
+import SocialMedia from "@/components/page_components/social-media.vue";
+import InterestWrapper from "@/components/page_components/interests.vue";
+import SkillDetailWrapper from "@/components/page_components/skill-detail.vue";
+import LanguageWrapper from "@/components/page_components/languages.vue";
+import AwardWrapper from "@/components/page_components/awards.vue";
+import Titles from "../components/page_components/titles.vue";
 
 export default {
   components: {
@@ -46,9 +63,10 @@ export default {
     InterestWrapper,
     SkillDetailWrapper,
     LanguageWrapper,
-    AwardWrapper
-  }
-}
+    AwardWrapper,
+    Titles,
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -65,6 +83,7 @@ export default {
   img {
     width: 100%;
     height: auto;
+    margin-top: 1.5rem;
   }
 }
 

@@ -9,10 +9,7 @@
         <h4 class="subtitle">Whoops... Page not found</h4>
         <p class="text-center">
           <transition name="button" appear>
-            <HomeButton 
-              text="Go Home"
-              links="/"
-            />
+            
           </transition>
         </p>
       </div>
@@ -21,11 +18,8 @@
 </template>
 
 <script>
-import HomeButton from '@/components/page_components/buttons/btn-general.vue'
 export default {
-  components: {
-    HomeButton
-  }
+  components: {},
 };
 </script>
 
@@ -41,7 +35,7 @@ export default {
 
   .title {
     font-size: 96px;
-    font-family: 'Rubik Mono One', sans-serif;
+    font-family: "Rubik Mono One", sans-serif;
   }
 
   .subtitle {

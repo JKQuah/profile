@@ -1,18 +1,15 @@
 <template>
-  <ul class="nav justify-content-evenly page-content">
+  <!-- <ul class="nav justify-content-evenly page-content">
     <li class="nav-item">
       <router-link class="nav-link" :to="{ name: 'Home' }">Home</router-link>
     </li>
     <li class="nav-item">
       <router-link class="nav-link" :to="{ name: 'About' }">About</router-link>
     </li>
-    <!-- <li class="nav-item">
-      <router-link class="nav-link" :to="{ name: 'Gallery' }">Gallery</router-link>
-    </li> -->
     <li class="nav-item">
       <router-link class="nav-link" :to="{ name: 'Contact' }">Contact</router-link>
     </li>
-  </ul>
+  </ul> -->
   <router-view class="page-content" v-slot="{ Component }">
     <transition name="route" mode="out-in">
       <component :is="Component"></component>

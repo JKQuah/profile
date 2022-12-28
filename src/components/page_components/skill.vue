@@ -1,7 +1,13 @@
 <template>
-  <p class="title">Skills</p>
-  <div class="row skill-row">
-    <div class="col-6 col-md-3 mb-5" v-for="skill in skills" :key="skill.id">
+  <Titles
+    title="Skill Proficiency"
+    subtitle="Favourite programming languages and frameworks"
+  />
+  <div class="row">
+    <small class="remarks">
+      *All rating are based on my knowledge scope and rated accordingly.
+    </small>
+    <div class="col-6 col-md-3 my-4" v-for="skill in skills" :key="skill.id">
       <div class="icon-holder">
         <img
           v-bind:src="skill.image"
@@ -10,13 +16,21 @@
           :alt="skill.imagealt"
         />
       </div>
-      <h5 class="skill-title">{{ skill.name }}
-          <span class="recommended" v-if="skill.id == 3"><i class="fas fa-thumbs-up"></i></span>
-          <span class="recommended" v-if="skill.id == 4 || skill.id == 7"><i class="fas fa-star"></i></span>
-      </h5>
-      
+      <h6 class="skill-title">
+        {{ skill.name }}
+        <span class="recommended" v-if="skill.id == 3"
+          ><i class="fas fa-thumbs-up"></i
+        ></span>
+        <span class="recommended" v-if="skill.id == 4 || skill.id == 7"
+          ><i class="fas fa-star"></i
+        ></span>
+      </h6>
+
       <div class="skill-content">
-        <div v-bind:style="{ width: skill.rating + '%'}" v-bind:class="[skill.rating > 80 ? 'green' : 'yellow', 'bar bar-striped']">
+        <div
+          :style="{ width: skill.rating + '%' }"
+          :class="[skill.rating >= 80 ? 'green' : 'yellow', 'bar bar-striped']"
+        >
           {{ skill.rating }} %
         </div>
       </div>
@@ -25,70 +39,92 @@
           <span>Number of projects: </span>
           <span class="text-end">{{ skill.project_count }}</span>
         </small>
-        <small class="skill-updated">Last project at {{ skill.updated_at }}</small>
+        <small class="skill-updated">
+          Last project at {{ skill.updated_at }}
+        </small>
       </div>
     </div>
-    <small class="remarks">*All rating are based on my knowledge scope and rated accordingly.</small>
-    <small><i class="fas fa-thumbs-up pe-1"></i> indicates good proficiency | Keen to learn</small>
-    <small><i class="fas fa-star pe-1"></i> indicates learning in process | Keen to learn </small>
+    <small class="mt-2">
+      <i class="fas fa-thumbs-up pe-1"></i>
+      indicates good proficiency | Keen to learn
+    </small>
+    <small class="mb-5">
+      <i class="fas fa-star pe-1"></i>
+      indicates learning in process | Keen to learn
+    </small>
   </div>
 </template>
 
 <script>
+import Titles from "./titles.vue";
+
 export default {
   data() {
     return {
       skills: [
+        // {
+        //   id: 1,
+        //   name: "HTML | CSS | JS",
+        //   image: "http://p92.com/binaries/content/gallery/p92website/technologies/htmlcssjs-overview.png",
+        //   imagealt: "htmlcssjs",
+        //   rating: 85,
+        //   project_count: 8,
+        //   updated_at: "May 2021",
+        // },
         {
           id: 1,
-          name: "HTML | CSS | JS",
-          image: "http://p92.com/binaries/content/gallery/p92website/technologies/htmlcssjs-overview.png",
-          imagealt: "htmlcssjs",
-          rating: 85,
+          name: "Vue",
+          image: "https://vuejs.org/images/logo.png",
+          imagealt: "vue",
+          rating: 80,
           project_count: 5,
-          updated_at: "May 2021",
+          updated_at: "recently",
         },
         {
           id: 2,
-          name: "Vue 3",
-          image: "https://vuejs.org/images/logo.png",
-          imagealt: "vue",
+          name: "React",
+          image:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png",
+          imagealt: "react",
           rating: 65,
           project_count: 2,
-          updated_at: "May 2021",
+          updated_at: "recently",
         },
         {
           id: 3,
           name: "Laravel",
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png",
+          image:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Laravel.svg/1200px-Laravel.svg.png",
           imagealt: "laravel",
-          rating: 85,
-          project_count: 3,
-          updated_at: "May 2021",
+          rating: 75,
+          project_count: 5,
+          updated_at: "recently",
         },
         {
           id: 4,
           name: "Python",
-          image: "https://files.realpython.com/media/python-logo.8eb72ea6927b.png",
+          image:
+            "https://files.realpython.com/media/python-logo.8eb72ea6927b.png",
           imagealt: "python",
           rating: 55,
           project_count: 2,
           updated_at: "May 2021",
         },
-        {
-          id: 5,
-          name: "Java",
-          image: "https://i.pinimg.com/originals/e9/94/61/e99461fdd5b3db8bdb3081d8acf5e524.png",
-          imagealt: "java",
-          rating: 60,
-          project_count: 3,
-          
-          updated_at: "Feb 2021",
-        },
+        // {
+        //   id: 5,
+        //   name: "Java",
+        //   image:
+        //     "https://i.pinimg.com/originals/e9/94/61/e99461fdd5b3db8bdb3081d8acf5e524.png",
+        //   imagealt: "java",
+        //   rating: 60,
+        //   project_count: 3,
+        //   updated_at: "Feb 2021",
+        // },
         {
           id: 6,
-          name: "Node JS",
-          image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png",
+          name: "Nodejs",
+          image:
+            "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png",
           imagealt: "node",
           rating: 70,
           project_count: 2,
@@ -97,39 +133,36 @@ export default {
         {
           id: 7,
           name: "Flutter",
-          image: "https://miro.medium.com/max/1000/1*ilC2Aqp5sZd1wi0CopD1Hw.png",
+          image:
+            "https://miro.medium.com/max/1000/1*ilC2Aqp5sZd1wi0CopD1Hw.png",
           imagealt: "flutter",
-          rating: 65,
+          rating: 50,
           project_count: 1,
           updated_at: "Feb 2021",
         },
         {
           id: 8,
           name: "Adobe",
-          image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT31f642uvQY5kzRK8xpxEDfDdQE_QRJtuHVNzCAG_sv6xSWZKOPJtHmLfVO3eckwRhh84&usqp=CAU",
+          image:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT31f642uvQY5kzRK8xpxEDfDdQE_QRJtuHVNzCAG_sv6xSWZKOPJtHmLfVO3eckwRhh84&usqp=CAU",
           imagealt: "adobe",
           rating: 85,
-          project_count: '-',
+          project_count: "-",
           updated_at: "Mar 2021",
         },
       ],
     };
   },
+  components: { Titles },
 };
 </script>
 
 <style lang="scss" scoped>
-.title {
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-}
 .icon-holder {
   text-align: center;
   img {
     width: auto;
-    height: 120px;
+    height: 80px;
   }
 }
 
@@ -141,8 +174,10 @@ export default {
   .bar {
     border-radius: 2rem;
     text-align: right;
-    padding: 5px 10px;
     color: white;
+    padding: 0 5px 0 0;
+    height: 20px;
+    font-size: 14px;
   }
 
   .green {
@@ -162,6 +197,7 @@ export default {
 }
 
 .skill-title {
+  font-weight: bold;
   .recommended {
     font-size: 16px;
     float: right;
@@ -175,7 +211,15 @@ export default {
 
 .bar-striped {
   background-image: linear-gradient(
-    135deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+    135deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
   background-size: 1rem 1rem;
   animation: barstripes 2s linear infinite;
 }
@@ -185,7 +229,9 @@ small.remarks {
 }
 
 @keyframes barstripes {
-  0% { background-position-x: 32px;}
+  0% {
+    background-position-x: 32px;
+  }
 }
 
 @media screen and (max-width: $mobile-L) {
@@ -193,7 +239,7 @@ small.remarks {
   .vue,
   .laravel,
   .python,
-  .java, 
+  .java,
   .node,
   .flutter,
   .adobe {
@@ -217,11 +263,7 @@ small.remarks {
     padding: 0 0.275rem;
   }
 
-  .skill-row {
-    padding: 0 0.5rem;
-  }
-
-  small.remarks {
+  .remarks {
     text-align: left;
   }
 }

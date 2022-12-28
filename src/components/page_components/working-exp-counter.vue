@@ -1,5 +1,5 @@
 <template>
-  <div class="row working-timer">
+  <div class="row working-timer" id="experience">
     <div class="col-12 col-md-6 divider">
       <div class="title">Working Experience</div>
       <div class="working-list" v-for="job in jobs" :key="job.id">
@@ -63,8 +63,8 @@
         </div>
         <!-- End -->
       </div>
-      <p class="company-name">at Sinegy Technologies Sdn Bhd</p>
-      <p class="position-name">as Junior Software Developer</p>
+      <p class="company-name">at Sinegy Dax Sdn Bhd</p>
+      <p class="position-name">as Software Developer</p>
     </div>
   </div>
 </template>
@@ -77,7 +77,7 @@ export default {
       jobs: [
         { id: 1, title: "Software Intern", company: "Keysight Technologies", date: "Aug 2019 - Jan 2020", duration: "6 months", isPresent: false },
         { id: 2, title: "Frontend Intern", company: "Lazy Technologies (Hong Kong)", date: "July 2020 - October 2020", duration: "4 months", isPresent: false },
-        { id: 3, title: "Software Developer", company: "Sinegy Technologies", date: "Feb 2021 - Present", duration: "", isPresent: true }
+        { id: 3, title: "Software Developer", company: "Sinegy Dax", date: "Feb 2021 - Present", duration: "", isPresent: true }
       ],
       working_hour: {
         year: 0,

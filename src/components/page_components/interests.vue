@@ -1,44 +1,57 @@
 <template>
-  <div class="interest-wrapper">
-      <div class="interest-items">
-        <img src="@/assets/hobby-icon/badminton.png" alt="badminton" title="badminton">
-        <span class="subtitle">Badminton</span>
-      </div>
-      <div class="interest-items">
-        <img src="@/assets/hobby-icon/basketball.png" alt="basketball" title="basketball">
-        <span class="subtitle">Basketball</span>
-      </div>
-      <div class="interest-items">
-        <img src="@/assets/hobby-icon/exercise.png" alt="exercise" title="exercise">
-        <span class="subtitle">Exercise</span>
-      </div>
-      <div class="interest-items">
-        <img src="@/assets/hobby-icon/strength.png" alt="strength" title="strength">
-        <span class="subtitle">Gym</span>
-      </div>
-      <div class="interest-items">
-        <img src="@/assets/hobby-icon/reading.png" alt="reading" title="reading">
-        <span class="subtitle">Reading</span>
-      </div>
-      <div class="interest-items">
-        <img src="@/assets/hobby-icon/learning.png" alt="learning" title="learning">
-        <span class="subtitle">Exploring</span>
-      </div>
-      <div class="interest-items">
-        <img src="@/assets/hobby-icon/netflix.png" alt="netflix" title="netflix">
-        <span class="subtitle">Netflix</span>
-      </div>
-      <div class="interest-items">
-        <img src="@/assets/hobby-icon/youtube.png" alt="youtube" title="youtube">
-        <span class="subtitle">Youtube</span>
-      </div>
+  <div class="interest-wrapper mb-5">
+    <div class="interest-items" v-for="hobby in hobbies" :key="hobby.id">
+      <img :src="hobby.image" :alt="hobby.alternate" :title="hobby.alternate" />
+      <span class="subtitle">{{ hobby.name }}</span>
     </div>
+  </div>
 </template>
 
 <script>
 export default {
-
-}
+  data() {
+    return {
+      hobbies: [
+        {
+          id: 1,
+          name: "Basketball",
+          alternate: "basketball",
+          image: "/assets/hobby-icon/basketball.png",
+        },
+        {
+          id: 2,
+          name: "Badminton",
+          alternate: "badminton",
+          image: "/assets/hobby-icon/badminton.png",
+        },
+        {
+          id: 3,
+          name: "Gym",
+          alternate: "gym",
+          image: "/assets/hobby-icon/strength.png",
+        },
+        {
+          id: 4,
+          name: "Reading",
+          alternate: "reading",
+          image: "/assets/hobby-icon/reading.png",
+        },
+        {
+          id: 5,
+          name: "Travelling",
+          alternate: "travelling",
+          image: "/assets/hobby-icon/travelling.png",
+        },
+        {
+          id: 6,
+          name: "Netflix",
+          alternate: "netflix",
+          image: "/assets/hobby-icon/netflix.png",
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -61,14 +74,13 @@ export default {
       width: 100%;
       text-align: center;
       text-transform: capitalize;
-
     }
   }
 
   img {
     width: 80px;
     height: 80px;
-    margin: 1.5rem;
+    margin: 1.5rem 1.5rem 0.5rem;
   }
 }
 </style>

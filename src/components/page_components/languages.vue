@@ -1,5 +1,5 @@
 <template>
-  <div class="language-row">
+  <div class="language-row mb-5">
     <div class="language-wrapper" v-for="language in languages" :key="language.id">
       <h1 class="language">{{ language.id }}
         <div class="dot"></div>
@@ -7,15 +7,15 @@
       </h1>
       <div class="rating">
         <span>Reading:</span>
-        <span :class="[ language.reading > 7 ? 'green' : '' ]">{{ language.reading }}/10</span>
+        <span :class="[ language.reading > 7 ? 'green' : '', 'fw-bold' ]">{{ language.reading }}/10</span>
       </div>
       <div class="rating">
         <span>Writing:</span>
-        <span :class="[ language.writing > 7 ? 'green' : '' ]">{{ language.writing }}/10</span>
+        <span :class="[ language.writing > 7 ? 'green' : '', 'fw-bold' ]">{{ language.writing }}/10</span>
       </div>
       <div class="rating">
         <span>Speaking:</span>
-        <span :class="[ language.speaking > 7 ? 'green' : '' ]">{{ language.speaking }}/10</span>
+        <span :class="[ language.speaking > 7 ? 'green' : '', 'fw-bold' ]">{{ language.speaking }}/10</span>
       </div>
     </div>
   </div>
@@ -44,7 +44,7 @@ export default {
   .language-wrapper {
     text-align: center;
     width: 20%;
-    margin: 1rem 0 2rem 0;
+    margin: 1rem 0;
 
     .language {
       font-weight: bold;
@@ -63,7 +63,6 @@ export default {
 
 .green {
   color: $dark-green;
-  font-weight: bold;
 }
 
 .dot:nth-child(1) {

@@ -1,11 +1,12 @@
 <template>
   <div class="home">
+    <SocialMedia class="justify-content-end" />
     <div class="row introduction">
       <div class="col-12 col-md-6">
         <div class="title">
           <h1>
             He
-            <br>
+            <br />
             llo
             <span class="dot"></span>
             <span class="divider"></span>
@@ -13,56 +14,72 @@
         </div>
         <transition name="fade" appear>
           <div class="subtitle">
-            <p>I'm a <span class="highlight">Junior Full Stack Developer</span></p>
-            <p>and <span class="highlight">Sport Enthusiast</span> located at Penang, Malaysia</p>
+            <p>My name is <span class="highlight">Olzzonne Quah</span>,</p>
+            <p>I'm a <span class="highlight">Full Stack Developer</span>,</p>
+            <p>
+              who preferable on
+              <span class="highlight">frontend development</span>,
+            </p>
+            <p>
+              currently doing my
+              <span class="highlight">master in research</span>
+              in UM,
+            </p>
+            <p>
+              and <span class="highlight">Sport Enthusiast</span> located at
+              Penang, Malaysia.
+            </p>
           </div>
         </transition>
       </div>
       <transition name="float-down" appear>
         <div class="col-12 col-md-6 profile-picture vertical-center">
-          <img src="@/assets/profile.svg" alt="My Profile" title="My Profile">
+          <img src="@/assets/profile.svg" alt="My Profile" title="My Profile" />
         </div>
       </transition>
     </div>
     <div class="row">
+      <NavigationBar />
+
       <div class="col-0 col-md-4"></div>
-      <div class="col-12 col-md-4 text-center">
+      <!-- <div class="col-12 col-md-4 text-center">
         <transition name="button" appear>
           <DiscoverMoreBtn text="Discover More" links="/about"/>
         </transition>
-      </div>
-      <div class="col-12 col-md-4 social-media-wrapper">
-        <SocialMedia />
-      </div>
+      </div> -->
     </div>
     <div class="bg-grey">
       <WorkingHourCounter />
     </div>
-    <div class="quotes-wrapper">
+    <div class="quotes-wrapper" id="quotes">
       <QuoteWrapper />
     </div>
-    <div class="skill-wrapper">
+    <div class="skill-wrapper" id="skill">
       <SkillWrapper />
     </div>
+
+    <About />
   </div>
 </template>
 
 <script>
-import DiscoverMoreBtn from '@/components/page_components/buttons/btn-general.vue'
-import WorkingHourCounter from '@/components/page_components/working-exp-counter.vue'
-import SocialMedia from '@/components/page_components/social-media.vue'
-import QuoteWrapper from '@/components/page_components/quotes.vue'
-import SkillWrapper from '@/components/page_components/skill.vue'
+import WorkingHourCounter from "@/components/page_components/working-exp-counter.vue";
+import SocialMedia from "@/components/page_components/social-media.vue";
+import QuoteWrapper from "@/components/page_components/quotes.vue";
+import SkillWrapper from "@/components/page_components/skill.vue";
+import About from "./About.vue";
+import NavigationBar from "../components/page_components/navigation-bar.vue";
 
 export default {
   name: "Home",
   components: {
-    DiscoverMoreBtn,
     WorkingHourCounter,
     SocialMedia,
     QuoteWrapper,
-    SkillWrapper
-  }
+    SkillWrapper,
+    About,
+    NavigationBar,
+  },
 };
 </script>
 
@@ -74,26 +91,35 @@ export default {
 }
 
 .introduction {
-  margin-top: 3rem;
+  .title {
+    text-align: left;
 
-  .title h1{
-    font-family: 'Rubik Mono One', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: -5px;
-    font-size: 8rem;
-    position: relative;
+    h1 {
+      font-family: "Rubik Mono One", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: -5px;
+      font-size: 8rem;
+      position: relative;
+    }
   }
 
   .subtitle {
     border-left: 8px solid $dark-green;
     padding: 0 1rem;
     font-size: 18px;
+    text-align: left;
 
     .highlight {
       letter-spacing: 1px;
       text-transform: capitalize;
       font-weight: bold;
       color: $dark-green;
+
+      &:hover {
+        text-decoration: underline;
+        text-decoration-thickness: 3px;
+        cursor: default;
+      }
     }
   }
 
@@ -127,12 +153,12 @@ export default {
 
 .bg-grey {
   border-radius: 18px;
-  margin: 3rem 0;
+  margin: 1rem 0;
   background: $bg-grey;
   height: 400px;
   width: 100%;
   padding: 5rem 0;
-  background-image: url('https://i.pinimg.com/originals/be/2a/94/be2a940c4ac312bf5abc0aa9677749de.jpg');
+  background-image: url("https://i.pinimg.com/originals/be/2a/94/be2a940c4ac312bf5abc0aa9677749de.jpg");
   background-size: cover;
 }
 
@@ -147,7 +173,8 @@ export default {
 }
 
 /* fade transition */
-.fade-enter-from, .fade-leave-to {
+.fade-enter-from,
+.fade-leave-to {
   opacity: 0;
 }
 
@@ -179,13 +206,28 @@ export default {
 }
 
 @keyframes vibrate {
-  0% {transform: rotate(10deg);opacity: 0;}
-  50% {transform: rotate(-5deg)}
-  60% {transform: rotate(3deg)}
-  70% {transform: rotate(-3deg)}
-  80% {transform: rotate(1deg)}
-  90% {transform: rotate(-1deg)}
-  100% {transform: rotate(0deg)}
+  0% {
+    transform: rotate(10deg);
+    opacity: 0;
+  }
+  50% {
+    transform: rotate(-5deg);
+  }
+  60% {
+    transform: rotate(3deg);
+  }
+  70% {
+    transform: rotate(-3deg);
+  }
+  80% {
+    transform: rotate(1deg);
+  }
+  90% {
+    transform: rotate(-1deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 @media screen and (max-width: $desktop) {
@@ -204,7 +246,7 @@ export default {
 
 @media screen and (max-width: $mobile-S) {
   .introduction {
-    .title h1{
+    .title h1 {
       font-size: 7rem;
     }
   }
